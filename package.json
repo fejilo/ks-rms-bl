@@ -1,0 +1,16 @@
+{
+  "name": "rms-bl",
+  "version": "1.0.0",
+  "description": "Use Cases for Rights Management System for kizan solutions.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.js",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ks-adapters": "github:fejilo/ks-adapters#release/1.0.0",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}
