@@ -75,6 +75,22 @@ class Authentication {
   }
 
   /**
+   * Verify if the user is authenticated
+   * @returns {boolean} - True if the user is authenticated, false otherwise
+   * @toDo
+   * To DO: Review the way for now if the user is aithenticated or anonymous
+   * is necesary add a aditional parameter in the token
+   */
+  isAuthenticated() {
+    if (!this.token) return false;
+    const tokenData = this.#authAdapter.decode(this.token);
+    if (tokenData.expTimestamp < Date.now() / 1000) return false;
+    if (tokenData.id !== this.user.id) return false;
+    if (tokenData.id === 10000) return false;
+    return true;
+  }
+
+  /**
    * Refresh the token and update the user data
    * @returns {Promise<Object>} - The auth data
    */

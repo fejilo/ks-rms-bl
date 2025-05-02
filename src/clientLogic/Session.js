@@ -200,6 +200,15 @@ class Session {
   }
 
   /**
+   * Check if the user is authenticated
+   * @description This method checks if the user is authenticated by checking if the token is valid
+   * @returns {boolean} - True if the user is authenticated, false otherwise
+   */
+  isAuthenticated() {
+    return this.auth.isAuthenticated();
+  }
+
+  /**
    * This method decodes the token and sets the session details
    * @param {String} token
    * @returns {void} - Sets the session details
